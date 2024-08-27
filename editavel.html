@@ -1,0 +1,360 @@
+<style>
+    :root {
+        --azul-sei: rgba(34, 140, 204, 0.3);
+        --verde-sei: rgba(127, 181, 26, 0.5);
+        height: 100%;
+        /* Define a altura como 100% */
+        font-size: 62.5%;
+        /* Define o tamanho da fonte como 62.5% do tamanho padrão, definindo a base 1rem = 10px, para facilitar a contagem para REM;para utilização da unidade de medidas em REM, pois ela é  Responsiva */
+        max-width: 100%;
+        /* Define a largura máxima como 100% do tamanho da tela*/
+    }
+
+    html,
+    body {
+        font-size: 1.6rem;
+        /* Define o tamanho da fonte */
+        word-wrap: break-word;
+        /* Permite que as palavras sejam quebradas quando não couberem na largura */
+
+    }
+
+    /* Define estilos para tabelas obrigatorio colocar essa classe em uma div geral para que todos os estilos sejam aplicado.*/
+    .table {
+        border-collapse: collapse;
+        border: solid 1px rgb(151, 151, 151);
+        /* Adiciona preenchimento interno de 25 pixels */
+        table-layout: fixed;
+        /* Define o layout da tabela para ser fixo */
+        margin-inline: 1rem;
+        /* Define a largura da tabela como 100% */
+        padding: 2rem;
+        word-wrap: break-word;
+        /* Permite que as palavras sejam quebradas quando não couberem na largura */
+    }
+
+
+    .titulo {
+        text-align: center !important;
+        font-weight: bold;
+        background-color: #dddddd;
+        padding: 1rem;
+        margin: 1rem !important;
+    }
+
+    /* Define estilos para células de cabeçalho e células de dados em tabelas */
+    .table th,
+    .table td {
+        padding: 2rem;
+        /* Adiciona preenchimento interno de 20 pixels */
+        border: 0.1rem solid rgba(147, 152, 157, .6);
+        /* Adiciona uma borda sólida com cor e transparência */
+    }
+
+    .table td {
+        text-align: justify;
+    }
+
+    /* Define estilos para divs */
+    .table .campopreenchimento {
+        width: 100%;
+        /* Define a largura da div como 100% */
+        padding: 1rem;
+        /* Adiciona preenchimento interno de 10 pixels */
+        margin-bottom: 1rem;
+        /* Adiciona uma margem inferior de 10 pixels */
+        border: 0.1rem solid #ced4da;
+        /* Adiciona uma borda sólida com cor */
+        border-radius: 0.4rem;
+        /* Adiciona bordas arredondadas com raio de 4 pixels */
+        box-sizing: border-box;
+        /* Inclui a borda e o preenchimento no tamanho total */
+        max-width: 100%;
+        /* Define a largura máxima como 100% */
+        word-wrap: break-word;
+        /* Permite que as palavras sejam quebradas quando não couberem na largura */
+        table-layout: fixed;
+        /* Define o layout da tabela para ser fixo */
+    }
+
+    .table div {
+        width: 100%;
+        /* Define a largura da div como 100% */
+
+
+    }
+
+    .table p {
+        text-align: justify;
+        margin: 0;
+    }
+
+    /* Define estilos para parágrafos editáveis dentro de tabelas */
+    .table p[contenteditable="true"] {
+        width: 100%;
+        /* Define a largura do parágrafo como 100% */
+        padding: 1rem;
+        /* Adiciona preenchimento interno de 10 pixels */
+        margin-bottom: 1rem;
+        /* Adiciona uma margem inferior de 10 pixels */
+        border: 0.1rem solid #ced4da;
+        /* Adiciona uma borda sólida com cor */
+        border-radius: 0.4rem;
+        /* Adiciona bordas arredondadas com raio de 4 pixels */
+        box-sizing: border-box;
+        /* Inclui a borda e o preenchimento no tamanho total */
+        max-width: 100%;
+        /* Define a largura máxima como 100% */
+
+    }
+
+    /* Define estilos para listas dentro de tabelas */
+    .table li {
+        line-height: 1.5;
+        /* Define a altura da linha como 1.5 vezes o tamanho da fonte */
+        margin-bottom: 1rem;
+        /* Adiciona uma margem inferior de 10 pixels */
+    }
+
+    /* Define a cor para elementos com classe azul*/
+    .azul {
+        background-color: var(--azul-sei);
+        /* Define a cor de fundo com rgba e transparência */
+    }
+
+    /* Define a cor para elementos com a classe verde */
+    .verde {
+        background-color: var(--verde-sei);
+        /* Define a cor de fundo com rgba e transparência */
+    }
+
+    /* Define estilos para elementos com classe "area2" */
+    .area2 {
+        background-color: rgba(243, 243, 243, 1);
+        /* Define a cor de fundo com rgba */
+    }
+
+    /* Define estilos para elementos com classe "area1" */
+    .area1 {
+        background-color: rgba(255, 255, 255, 1);
+        /* Define a cor de fundo com rgba */
+    }
+
+    /* Define estilos para elementos com classe "radio" */
+    .radio {
+        border: none !important;
+        /* Remove a borda do elemento, com importância */
+    }
+
+    /* Define estilos para divs dentro de elementos com classe "radio" */
+    .radio div {
+        width: 2rem;
+        /* Define a largura da div como 3rem */
+        height: 2rem;
+        /* Define a altura da div como 3rem */
+        border: 0.1rem solid #7d8286;
+        /* Adiciona uma borda sólida com cor */
+        border-radius: 50%;
+        /* Define um raio de borda de 50% para criar uma forma circular */
+        text-align: center;
+        /* Centraliza o texto horizontalmente */
+        overflow: hidden;
+        /* Esconde o conteúdo que ultrapassar os limites da div */
+        user-select: all;
+        /* Permite a seleção de todo o conteúdo da div */
+        margin: 5px;
+        /* Adiciona uma margem de 5 pixels */
+        display: inline-block;
+        /* Define a div como um bloco em linha */
+        vertical-align: middle;
+        /* Alinha verticalmente ao centro */
+        padding: 5px;
+        /* Adiciona um preenchimento interno de 5 pixels */
+        text-transform: uppercase;
+        /* Transforma o texto em maiúsculas */
+    }
+
+    .table label {
+        text-transform: uppercase;
+    }
+
+    /* Define estilos para rótulos dentro de elementos com classe "radio" */
+    .radio label {
+        vertical-align: middle;
+        /* Alinha verticalmente ao centro */
+    }
+
+    .linhaEditavel {
+        margin: .5;
+        /* Adiciona uma margem de 0.5 unidades */
+        line-height: 1.5;
+        /* Define a altura da linha como 1.5 vezes o tamanho da fonte */
+        border-bottom: 0.1rem solid;
+        /* Adiciona uma borda inferior sólida */
+        margin-left: .5rem;
+        /* Adiciona uma margem à esquerda de 0.5 unidades */
+        user-select: all;
+        /* Permite a seleção de todo o conteúdo */
+        outline: none;
+        /* Remove o contorno ao focar no elemento */
+        display: inline-block;
+        /* Define o elemento como um bloco em linha */
+        min-width: 20rem;
+        /* Define a largura mínima como 20rem */
+        max-width: max-content;
+        /* Define a largura máxima como o conteúdo máximo */
+        font-weight: bold;
+        /* Define o peso da fonte como negrito */
+    }
+
+    .data {
+        font-weight: bold;
+        /* Define o peso da fonte como negrito */
+        line-height: 1.5;
+        /* Define a altura da linha como 1.5 vezes o tamanho da fonte */
+        border-bottom: 0.1rem solid;
+        /* Adiciona uma borda inferior sólida */
+        margin: .5;
+        /* Adiciona uma margem de 0.5 unidades */
+        user-select: all;
+        /* Permite a seleção de todo o conteúdo */
+        outline: none;
+        /* Remove o contorno ao focar no elemento */
+        display: inline-block;
+        /* Define o elemento como um bloco em linha */
+        min-width: 3rem;
+        /* Define a largura mínima como 3rem */
+        max-width: max-content;
+        /* Define a largura máxima como o conteúdo máximo */
+    }
+
+    .linhaEspacada {
+        line-height: 2.5;
+        /* Define a altura da linha como 2.5 vezes o tamanho da fonte */
+        word-wrap: break-word;
+        /* Permite que as palavras possam ser quebradas */
+    }
+
+    #flex {
+        display: flex;
+        margin: 1rem;
+
+
+    }
+
+    #flex div {
+        margin-right: 1rem;
+    }
+</style>
+
+
+<div class="table" style="border: none!important;" contenteditable="false">
+    <P class="titulo">INFORMAÇÕES DO CARGO <SPAn style="font-size: 80%;">informações preenchidas pela área
+            Requisitante</SPAn></P>
+    <div id="flex">
+        <div>
+
+            <label>CARGO:</label>
+            <div class="campopreenchimento" contenteditable="true"></div>
+
+        </div>
+
+        <div>
+            <label>SALÁRIO:</label>
+            <div class="campopreenchimento" contenteditable="true"></div>
+
+
+        </div>
+        <div>
+            <label for="">solicitar cracha</label>
+            <div class="radio">
+
+                <div contenteditable=""></div>
+                <label for="" style="margin-right:2rem">sim</label>
+                <div contenteditable=""></div>
+                <label for="">não</label>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="flex">
+
+        <div>
+            <label>JORNADA MENSAL:</label>
+            <div class="radio">
+                <div contenteditable=""></div>
+                <label for="">180 horas</label> <br>
+
+                <div contenteditable=""></div>
+                <label for="">200 horas</label>
+            </div>
+        </div>
+        <div>
+            <label>apuração de frequência:</label>
+            <div class="radio">
+                <div contenteditable=""></div>
+                <label for="">ponto eletrônico</label> <br>
+
+                <div contenteditable=""></div>
+                <label for="">atestado de frequência</label> <br>
+
+                <div contenteditable=""></div>
+                <label for="">folha de presença</label>
+            </div>
+        </div>
+        <div>
+            <label>REGIME E LOTAÇÃO:</label>
+            <div class="radio">
+                <div contenteditable=""></div>
+                <label for="">TELETRABALHO</label> <br>
+
+                <div contenteditable=""></div>
+                <label for="">HÍBRIDO</label><br>
+
+                
+                <div contenteditable=""></div>
+                <label for="">PRESENCIAL</label> <br>
+
+                <div contenteditable=""></div>
+                <label for="">camg</label><br>
+
+                <div contenteditable=""></div>
+                <label for="">rua da bahia</label> <br>
+
+                <div contenteditable=""></div>
+                <label for="">outro</label>
+
+
+            </div>
+            <div class="campopreenchimento" contenteditable=""></div>
+        </div>
+    </div>
+<div>
+    <label for="">atividades a serem desempenhadas</label>
+    <div class="campopreenchimento" contenteditable=""></div>
+</div>
+
+<p class="titulo"> INFORMAÇÕES DA CONTRATAÇÃO <span style="font-size: 80%;">Contratação (informações preenchidas pela área Requisitante)</span></p>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
